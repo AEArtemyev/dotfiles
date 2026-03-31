@@ -5,6 +5,11 @@ return {
     config = function()
       require("matlab").setup({
         auto_start = false,
+        environment = {
+          LD_LIBRARY_PATH = "/usr/local/lib",
+          -- for figures, need to check 'echo $DISPLAY'
+          DISPLAY = ":1",
+        },
       })
     end,
     keys = {
