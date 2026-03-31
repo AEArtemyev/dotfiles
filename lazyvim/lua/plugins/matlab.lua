@@ -29,6 +29,15 @@ return {
         mode = "n",
         desc = "MATLAB: Stop server",
       },
+      {
+        -- Сворачивает или разворачивает все MATLAB cell sections, помеченные через %%.
+        "<leader>mF",
+        function()
+          vim.cmd("MatlabToggleAllCellFolds")
+        end,
+        mode = "n",
+        desc = "MATLAB: Toggle all cell folds",
+      },
     },
   },
 }
