@@ -22,6 +22,20 @@ tmux send-keys -t "$SESSION":qm 'lv' C-m
 # Отправляем в окно "qm" команду lv и Enter
 # C-m эквивалентен нажатию клавиши Enter
 
+tmux new-window -t "$SESSION" -n qmMATLAB -c ~/QuadMesher/matlab/rsp
+# Создаём окно 3 внутри сессии "work"
+# Имя окна: "qmMATLAB"
+# Стартовая директория та же: ~/QuadMesher/matlab/rsp
+
+tmux send-keys -t "$SESSION":qmMATLAB 'matlab -nodesktop' C-m
+# Отправляем в окно "qmMATLAB" команду запуска MATLAB
+# C-m эквивалентен нажатию клавиши Enter
+
+tmux send-keys -t "$SESSION":qmMATLAB \
+  "f = figure('Visible','off'); drawnow; close(f);" C-m
+# Отправляем в окно "qmMATLAB" команду открытия и закрытия figure
+# для инициализации графики
+
 tmux new-window -t "$SESSION" -n codex -c ~/plate_solver_project
 # Создаём второе окно внутри сессии "disser"
 # Имя окна: "codex"
