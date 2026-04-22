@@ -35,14 +35,10 @@ tmux new-window -t "$SESSION" -n psjMATLAB -c ~/work/disser/plate_solver_project
 # Имя окна: "psjMATLAB"
 # Стартовая директория та же: ~/work/disser/plate_solver_project
 
-tmux send-keys -t "$SESSION":psjMATLAB 'matlab -nodesktop' C-m
-# Отправляем в окно "psj" команду запуска MATLAB
-# C-m эквивалентен нажатию клавиши Enter
-
 tmux send-keys -t "$SESSION":psjMATLAB \
-  "f = figure('Visible','off'); drawnow; close(f);" C-m
-# Отправляем в окно "psjMATLAB" команду открытия и закрытия figure
-# для инициализации графики
+  "matlab -nodesktop -r \"f=figure('Visible','off'); drawnow; close(f);\"" C-m
+# Отправляем в окно "psj" команду запуска MATLAB и команды открытия и закрытия
+# figure для инициализации графики
 
 tmux new-window -t "$SESSION" -n psjcodex -c ~/work/disser/plate_solver_project
 # Создаём окно 5 внутри сессии "disser"
