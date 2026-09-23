@@ -18,35 +18,41 @@ tmux new-session -d -s "$SESSION" -n vial -c ~/
 # -n  => имя первого окна: "vial"
 # -c  => стартовая директория для окна: ~/
 
-tmux send-keys -t "$SESSION":vial './Downloads/Vial-v0.7.5-x86_64.AppImage' C-m
-# Отправляем в окно "vial" команду и Enter
+tmux send-keys -t "$SESSION":vial './Downloads/Vial-v0.7.5-x86_64.AppImage'
+# Отправляем в окно "vial" команду
 
-tmux new-window -t "$SESSION" -n psj -c ~/work/disser/plate_solver_project
+tmux new-window -t "$SESSION" -n psj -c ~/YandexDisk/work/disser/plate_solver_project
 # Создаём окно 2 внутри сессии "psj"
 # Имя окна: "psj"
-# Стартовая директория та же: ~/work/disser/plate_solver_project
+# Стартовая директория та же: ~/YandexDisk/work/disser/plate_solver_project
 
-tmux send-keys -t "$SESSION":psj 'lv' C-m
-# Отправляем в окно "psj" команду lv и Enter
-# C-m эквивалентен нажатию клавиши Enter
+tmux send-keys -t "$SESSION":psj 'lv'
+# Отправляем в окно "psj" команду lv
 
-tmux new-window -t "$SESSION" -n psjMATLAB -c ~/work/disser/plate_solver_project
+tmux new-window -t "$SESSION" -n psjMATLAB -c ~/YandexDisk/work/disser/plate_solver_project
 # Создаём окно 3 внутри сессии "disser"
 # Имя окна: "psjMATLAB"
-# Стартовая директория та же: ~/work/disser/plate_solver_project
+# Стартовая директория та же: ~/YandexDisk/work/disser/plate_solver_project
 
 tmux send-keys -t "$SESSION":psjMATLAB \
-  "matlab -nodesktop -r \"f=figure('Visible','off'); drawnow; close(f);\"" C-m
+  "matlab -nodesktop -r \"f=figure('Visible','off'); drawnow; close(f);\""
 # Отправляем в окно "psj" команду запуска MATLAB и команды открытия и закрытия
 # figure для инициализации графики
 
-tmux new-window -t "$SESSION" -n psjcodex -c ~/work/disser/plate_solver_project
+tmux new-window -t "$SESSION" -n psjcodex -c ~/YandexDisk/work/disser/plate_solver_project
 # Создаём окно 5 внутри сессии "disser"
 # Имя окна: "psjcodex"
-# Стартовая директория та же: ~/work/disser/plate_solver_project
+# Стартовая директория та же: ~/YandexDisk/work/disser/plate_solver_project
 
 # tmux send-keys -t "$SESSION":psjcodex 'codex' C-m
 # В окне "qmcodex" запускаем команду codex
+
+tmux new-window -t "$SESSION" -n e2d -c ~/YandexDisk/work/disser/elasticity2d
+tmux send-keys -t "$SESSION":e2d 'lv'
+tmux new-window -t "$SESSION" -n e2dMATLAB -c ~/YandexDisk/work/disser/elasticity2d
+tmux send-keys -t "$SESSION":e2dMATLAB \
+  "matlab -nodesktop -r \"f=figure('Visible','off'); drawnow; close(f);\""
+tmux new-window -t "$SESSION" -n e2dcodex -c ~/YandexDisk/work/disser/elasticity2d/
 
 tmux select-window -t 1
 # Переключаемся на окно 1
