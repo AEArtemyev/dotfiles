@@ -61,3 +61,5 @@ vim.keymap.set("n", "r", function()
   -- После замены символа принудительно возвращаем английскую раскладку.
   switch_to_english()
 end, { desc = "Replace one character and switch layout to English" })
+
+vim.g.MATLAB_function_indent = 1
