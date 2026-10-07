@@ -71,6 +71,7 @@ create_session surface_model "$HOME/dev/surface_model" nvim matlab build codex
 create_session dotfiles "$HOME/dev/dotfiles" nvim codex
 create_session plate_solver_project "$HOME/YandexDisk/work/disser/plate_solver_project" nvim matlab codex
 create_session elasticity2d "$HOME/YandexDisk/work/disser/elasticity2d" nvim matlab codex
+create_session fdmInfSup "$HOME/YandexDisk/work/disser/fdmInfSupArticle" nvim codex
 
 # Редко используемые программы держим в отдельной сессии из домашнего каталога.
 create_session utils "$HOME" vial
