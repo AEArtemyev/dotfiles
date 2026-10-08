@@ -4,6 +4,13 @@ return {
     "folke/snacks.nvim",
 
     opts = {
+      lazygit = {
+        env = {
+          -- Команда C запускает git commit, который ждёт завершения GIT_EDITOR.
+          -- NVIM_APPNAME=lazyvim наследуется от lv, поэтому откроется LazyVim.
+          GIT_EDITOR = "nvim",
+        },
+      },
       image = {
         enabled = true,
         math = {
