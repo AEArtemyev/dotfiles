@@ -12,20 +12,7 @@ opt.listchars = "space:·"
 -- Перенос длинных строк на несколько визуальных строк.
 opt.wrap = true
 
-local function switch_to_english()
-  vim.fn.jobstart({
-    "gdbus",
-    "call",
-    "--session",
-    "--dest",
-    "org.gnome.Shell",
-    "--object-path",
-    "/me/madhead/Shyriiwook",
-    "--method",
-    "me.madhead.Shyriiwook.activate",
-    "us",
-  }, { detach = true })
-end
+local switch_to_english = require("config.switch_to_english").switch_to_english
 
 -- автоматическая смена языка на английский при выходе из Insert Mode
 -- и при возврате фокуса в Neovim из другого приложения
