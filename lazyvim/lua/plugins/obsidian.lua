@@ -12,7 +12,7 @@ return {
     workspaces = {
       {
         name = "work",
-        path = "~/YandexDisk/work/Obsidian Work",
+        path = "~/YandexDisk/work/ObsidianWork",
       },
     },
   },
