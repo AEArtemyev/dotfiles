@@ -22,7 +22,13 @@ prefill_window() {
   local session=$1 window=$2 command
 
   case "$window" in
-    nvim) command='lv' ;;
+    nvim)
+      if [[ $session == obsidian ]]; then
+        command="lv '+colorscheme tokyonight-day'"
+      else
+        command='lv'
+      fi
+      ;;
     matlab) command="matlab -nodesktop -r \"f=figure('Visible','off'); drawnow; close(f);\"" ;;
     codex) command='codex' ;;
     vial) command='./Downloads/Vial-v0.7.5-x86_64.AppImage' ;;
