@@ -5,6 +5,9 @@ return {
 
     opts = {
       enabled = true,
+      checkbox = {
+        enabled = true,
+      },
 
       -- Формулы рендерит Snacks.image
       latex = {
