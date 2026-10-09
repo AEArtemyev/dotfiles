@@ -4,6 +4,12 @@ return {
     "folke/snacks.nvim",
 
     opts = {
+      picker = {
+        db = {
+          -- lazyvim can'f find sqlite
+          sqlite3_path = "/usr/lib/x86_64-linux-gnu/libsqlite3.so.0",
+        },
+      },
       lazygit = {
         env = {
           -- Команда C запускает git commit, который ждёт завершения GIT_EDITOR.
