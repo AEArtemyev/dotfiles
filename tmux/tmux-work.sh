@@ -65,7 +65,7 @@ create_session() {
 }
 
 # Рабочие проекты: каждое окно начинает работу в каталоге своей сессии.
-create_session obsidian "$HOME/YandexDisk/work/Obsidian Work" nvim codex
+create_session obsidian "$HOME/YandexDisk/work/ObsidianWork" nvim codex
 create_session dotfiles "$HOME/dev/dotfiles" nvim codex
 create_session quad_mesher "$HOME/dev/QuadMesher" nvim matlab build codex
 create_session rsp "$HOME/dev/rsp" nvim
